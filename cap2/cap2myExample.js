@@ -58,7 +58,7 @@ const server = http.createServer((req, res) => {
     if (pathname === '/hello') {
         res.end(hello)
         return
-    } 
+    }  
 
     if (pathname === '/') {
         res.end(urlBasic)
@@ -71,3 +71,5 @@ const server = http.createServer((req, res) => {
 })
 console.log("Start server - port", PORT)
 server.listen(PORT)
+
+/*if I pass http://localhost:3000/hello?foo=1 match hello body */
