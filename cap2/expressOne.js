@@ -11,9 +11,11 @@ app.use('/one', indexRoutesTwo)
 
 app.use((req, res, next) => {
     if (req.method !== 'GET') {
+        console.log("Method 405")
         next(createError(405))
         return
     }
+    console.log("not found")
     next(createError(404))
 })
 
