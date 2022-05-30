@@ -60,7 +60,7 @@ const server = http.createServer((req, res) => {
         return
     }  
 
-    if (pathname === '/provs') {
+    if (pathname === '/prova') {
         res.end(urlBasic)
         return
     } 
