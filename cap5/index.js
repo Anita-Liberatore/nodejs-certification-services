@@ -9,7 +9,15 @@ const PORT = 3000;
 
 app.use('/bicycle', bicycleRouter);
 
-app.use(function(req, res, next) { next(createError(404)); });
+app.use((req, res, next) => {
+    if (req.method !== 'GET') {
+        console.log("Method 405")
+        next(createError(405))
+        return
+    }
+    console.log("not found")
+    next(createError(404))
+})
 
 app.use(function (err, req, res, next) {
     res.status(err.status || 500);
